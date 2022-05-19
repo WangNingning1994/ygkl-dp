@@ -33,6 +33,32 @@ img {
   width: auto;
 }
 
+.header {
+  grid-column-start: 1;
+  grid-column-end: span 3;
+  grid-row-start: 1;
+  grid-row-end: span 1;
+  background: pink;
+}
+
+.left {
+  grid-column-start: 1;
+  grid-row-start: 2;
+  background: orange;
+}
+
+.left {
+  grid-column-start: 2;
+  grid-row-start: 2;
+  background: green;
+}
+
+.right {
+  grid-column-start: 3;
+  grid-row-start: 2;
+  background: saddlebrown;
+}
+
 .container {
   width: 1920px;
   height: 1080px;
@@ -40,6 +66,9 @@ img {
   position: relative;
   transform-origin: top left;
   transform: scale(1);
+  display: grid;
+  grid-template-columns: [line1] 530px [line2] 860px [line3] 530px;
+  grid-template-rows: [line1] 120px [line2] 960px;
 }
 
 /*# sourceMappingURL=index.css.map */

@@ -1,1 +1,8 @@
 // 页面头部的样式
+.header {
+  grid-column-start: 1;
+  grid-column-end: span 3;
+  grid-row-start: 1;
+  grid-row-end: span 1;
+  background: pink;
+}

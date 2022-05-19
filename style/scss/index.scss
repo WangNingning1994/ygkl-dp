@@ -1,6 +1,9 @@
 @import './reset';
 @import './variables';
 @import './header';
+@import './left';
+@import './middle';
+@import './right';
 
 .container {
   width: 1920px;
@@ -9,4 +12,7 @@
   position: relative;
   transform-origin: top left;
   transform: scale(1);
+  display: grid;
+  grid-template-columns: [line1] 530px [line2] 860px [line3] 530px;
+  grid-template-rows: [line1] 120px [line2] 960px;
 }
