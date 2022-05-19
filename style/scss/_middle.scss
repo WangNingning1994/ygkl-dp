@@ -2,8 +2,8 @@
 .middle {
   grid-column-start: 2;
   grid-row-start: 2;
-  border: 1px solid red;
   padding-left: $contentGap;
+  padding-right: $contentGap;
   padding-bottom: $contentGap * 2;
   display: flex;
   flex-direction: column;

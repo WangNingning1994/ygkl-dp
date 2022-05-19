@@ -56,6 +56,7 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
 }
 .left .left-top, .left .left-bottom {
   width: 500px;
@@ -72,8 +73,8 @@ img {
 .middle {
   grid-column-start: 2;
   grid-row-start: 2;
-  border: 1px solid red;
   padding-left: 20px;
+  padding-right: 20px;
   padding-bottom: 40px;
   display: flex;
   flex-direction: column;
@@ -88,9 +89,23 @@ img {
 .right {
   grid-column-start: 3;
   grid-row-start: 2;
-  border: 1px solid pink;
-  padding-left: 20px;
+  padding-right: 20px;
   padding-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.right .right-top, .right .right-bottom {
+  width: 500px;
+  height: 445px;
+  background: url(../../assets/frame-type-1.png) no-repeat left top/cover;
+}
+.right .right-top > h2, .right .right-bottom > h2 {
+  font-size: 1.25rem;
+  color: #fff;
+  padding-left: 2rem;
+  line-height: 2;
 }
 
 html, body {
