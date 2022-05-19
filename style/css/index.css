@@ -51,9 +51,22 @@ img {
 .left {
   grid-column-start: 1;
   grid-row-start: 2;
-  border: 1px solid blue;
   padding-left: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.left .left-top, .left .left-bottom {
+  width: 500px;
+  height: 445px;
+  background: url(../../assets/frame-type-1.png) no-repeat left top/cover;
+}
+.left .left-top > h2, .left .left-bottom > h2 {
+  font-size: 1.25rem;
+  color: #fff;
+  padding-left: 2rem;
+  line-height: 2;
 }
 
 .middle {
@@ -61,7 +74,7 @@ img {
   grid-row-start: 2;
   border: 1px solid red;
   padding-left: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -77,7 +90,7 @@ img {
   grid-row-start: 2;
   border: 1px solid pink;
   padding-left: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
 }
 
 html, body {
