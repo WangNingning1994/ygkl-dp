@@ -1,2 +1,12 @@
 @import './reset';
 @import './variables';
+@import './header';
+
+.container {
+  width: 1920px;
+  height: 1080px;
+  background: #ddd;
+  position: relative;
+  transform-origin: top left;
+  transform: scale(1);
+}

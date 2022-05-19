@@ -1,5 +1,4 @@
 /* overwrite scroll bar default style */
-
 ::-webkit-scrollbar-track {
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   background-color: #2951a6;
@@ -19,7 +18,6 @@
 }
 
 /* reset */
-
 * {
   padding: 0;
   margin: 0;
@@ -34,3 +32,14 @@ img {
   max-width: 100%;
   width: auto;
 }
+
+.container {
+  width: 1920px;
+  height: 1080px;
+  background: #ddd;
+  position: relative;
+  transform-origin: top left;
+  transform: scale(1);
+}
+
+/*# sourceMappingURL=index.css.map */
