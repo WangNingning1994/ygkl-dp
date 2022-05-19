@@ -2,5 +2,7 @@
 .right {
   grid-column-start: 3;
   grid-row-start: 2;
-  background: saddlebrown;
+  border: 1px solid pink;
+  padding-left: $contentGap;
+  padding-bottom: $contentGap;
 }

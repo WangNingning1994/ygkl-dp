@@ -3,16 +3,27 @@
 @import './header';
 @import './left';
 @import './middle';
+@import './middle-bottom';
 @import './right';
+
+html, body {
+  font-family: "SF Pro SC","SF Pro Text","SF Pro Icons","PingFang SC","Helvetica Neue","Helvetica","Arial",sans-serif;
+  font-size: 16px;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+}
 
 .container {
   width: 1920px;
   height: 1080px;
-  background: #ddd;
   position: relative;
   transform-origin: top left;
   transform: scale(1);
   display: grid;
   grid-template-columns: [line1] 530px [line2] 860px [line3] 530px;
   grid-template-rows: [line1] 120px [line2] 960px;
+  background: url(../../assets/page-bg.jpg) no-repeat left top / 1920px 1080px;
 }

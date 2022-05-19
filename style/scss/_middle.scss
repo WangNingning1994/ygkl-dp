@@ -1,6 +1,11 @@
 // 中间
-.left {
+.middle {
   grid-column-start: 2;
   grid-row-start: 2;
-  background: green;
+  border: 1px solid red;
+  padding-left: $contentGap;
+  padding-bottom: $contentGap;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }

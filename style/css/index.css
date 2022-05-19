@@ -38,37 +38,68 @@ img {
   grid-column-end: span 3;
   grid-row-start: 1;
   grid-row-end: span 1;
-  background: pink;
+  background: url(../../assets/header-bg.png) no-repeat center/contain;
+}
+.header h1 {
+  font-size: 2.5rem;
+  color: #fff;
+  text-shadow: 0px 5px 0px rgba(7, 58, 152, 0.5);
+  text-align: center;
+  line-height: 110px;
 }
 
 .left {
   grid-column-start: 1;
   grid-row-start: 2;
-  background: orange;
+  border: 1px solid blue;
+  padding-left: 20px;
+  padding-bottom: 20px;
 }
 
-.left {
+.middle {
   grid-column-start: 2;
   grid-row-start: 2;
-  background: green;
+  border: 1px solid red;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.middle-bottom {
+  border: 1px solid #ddd;
+  height: 260px;
 }
 
 .right {
   grid-column-start: 3;
   grid-row-start: 2;
-  background: saddlebrown;
+  border: 1px solid pink;
+  padding-left: 20px;
+  padding-bottom: 20px;
+}
+
+html, body {
+  font-family: "SF Pro SC", "SF Pro Text", "SF Pro Icons", "PingFang SC", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 16px;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
 }
 
 .container {
   width: 1920px;
   height: 1080px;
-  background: #ddd;
   position: relative;
   transform-origin: top left;
   transform: scale(1);
   display: grid;
   grid-template-columns: [line1] 530px [line2] 860px [line3] 530px;
   grid-template-rows: [line1] 120px [line2] 960px;
+  background: url(../../assets/page-bg.jpg) no-repeat left top/1920px 1080px;
 }
 
 /*# sourceMappingURL=index.css.map */

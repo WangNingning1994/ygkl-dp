@@ -2,5 +2,7 @@
 .left {
   grid-column-start: 1;
   grid-row-start: 2;
-  background: orange;
+  border: 1px solid blue;
+  padding-left: $contentGap;
+  padding-bottom: $contentGap;
 }
