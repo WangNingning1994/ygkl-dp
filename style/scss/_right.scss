@@ -1,3 +1,12 @@
+@keyframes animate {
+  0%{
+      transform: translate(-50%, -75%) rotate(0deg);
+  }
+  100%{
+      transform: translate(-50%, -75%) rotate(360deg);
+  }
+}
+
 // 右侧
 .right {
   grid-column-start: 3;
@@ -19,4 +28,122 @@
       line-height: 2;
     }
   }
+  .right-top-1, .right-top-2 {
+    padding: 1em;
+    height: 200px;
+    h3 {
+      font-size: 1.125rem;
+      color: $pureWhite;
+      display: inline-block;
+      border: 3px solid $lightBlue;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      border-top: none;
+      border-bottom: none;
+    }
+  }
+  .right-top-1 {
+    .wrapper {
+      display: flex;
+      justify-content: space-between;
+      .item {
+        margin-top: 1rem;
+        width: 49%;
+        height: 120px;
+        background: url(../../assets/frame-type-3.png) no-repeat left top;
+        background-size: 100% 100%;
+        padding: 1rem;
+        padding-top: .5rem;
+        .title {
+          display: flex;
+          .title-item {
+            color: $pureWhite;
+            font-size: .75rem;
+            width: 25%;
+            &:nth-child(1) {
+              font-size: .875rem; 
+              color: $lightBlue;
+              width: 50%;
+            }
+          }
+        }
+        .content {
+          .data {
+            display: flex;
+            align-items: center;
+            line-height: 1.4;
+            .title {
+              font-size: .75rem;
+              color: $pureWhite;
+              width: 50%;
+            }
+            .value {
+              width: 25%;
+              color: $primaryGreen; 
+              &.warning {
+                color: $primaryYellow;
+              }
+              &.error {
+                color: $darkRed;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .right-top-2 {
+    .wrapper {
+      display: flex;
+      justify-content: space-between;
+      .item {
+        width: 50%;
+        .wave-items {
+          display: flex;
+          flex-wrap: wrap;
+          .circle {
+            width: 60px;
+            height: 60px;
+            background: #ccc;
+            border: 5px solid #4973ff;
+            border-radius: 50%;
+            overflow: hidden;
+            .wave {
+              position: relative;
+              width: 100%;
+              height: 100%;
+              background: #4973ff;
+              border-radius: 50%;
+              box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+            }
+            .wave:before,
+            .wave:after {
+              content: '';
+              position: absolute;
+              width: 200%;
+              height: 200%;
+              top: 0;
+              left: 50%;
+              transform: translate(-50%, -75%);
+            }
+            .wave:before {
+              border-radius: 45%;
+              background: rgba(255, 255, 255, 1);
+              animation: animate 5s linear infinite;
+            }
+            .wave:after {
+              border-radius: 40%;
+              background: rgba(255, 255, 255, .5);
+              animation: animate 10s linear infinite;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Echarts Container
+#right-top-echarts-1 {
+  height: 200px;
 }

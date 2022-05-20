@@ -142,10 +142,24 @@ img {
 }
 
 .middle-bottom {
-  border: 1px solid #ddd;
   height: 260px;
+  background: url("../../assets/frame-type-2.png") no-repeat left top/cover;
+}
+.middle-bottom > h2 {
+  font-size: 1.25rem;
+  color: #fff;
+  padding-left: 2rem;
+  line-height: 2;
 }
 
+@keyframes animate {
+  0% {
+    transform: translate(-50%, -75%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -75%) rotate(360deg);
+  }
+}
 .right {
   grid-column-start: 3;
   grid-row-start: 2;
@@ -166,6 +180,117 @@ img {
   color: #fff;
   padding-left: 2rem;
   line-height: 2;
+}
+.right .right-top-1, .right .right-top-2 {
+  padding: 1em;
+  height: 200px;
+}
+.right .right-top-1 h3, .right .right-top-2 h3 {
+  font-size: 1.125rem;
+  color: #fff;
+  display: inline-block;
+  border: 3px solid #00d2ff;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-top: none;
+  border-bottom: none;
+}
+.right .right-top-1 .wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.right .right-top-1 .wrapper .item {
+  margin-top: 1rem;
+  width: 49%;
+  height: 120px;
+  background: url(../../assets/frame-type-3.png) no-repeat left top;
+  background-size: 100% 100%;
+  padding: 1rem;
+  padding-top: 0.5rem;
+}
+.right .right-top-1 .wrapper .item .title {
+  display: flex;
+}
+.right .right-top-1 .wrapper .item .title .title-item {
+  color: #fff;
+  font-size: 0.75rem;
+  width: 25%;
+}
+.right .right-top-1 .wrapper .item .title .title-item:nth-child(1) {
+  font-size: 0.875rem;
+  color: #00d2ff;
+  width: 50%;
+}
+.right .right-top-1 .wrapper .item .content .data {
+  display: flex;
+  align-items: center;
+  line-height: 1.4;
+}
+.right .right-top-1 .wrapper .item .content .data .title {
+  font-size: 0.75rem;
+  color: #fff;
+  width: 50%;
+}
+.right .right-top-1 .wrapper .item .content .data .value {
+  width: 25%;
+  color: #0ce773;
+}
+.right .right-top-1 .wrapper .item .content .data .value.warning {
+  color: #ffc412;
+}
+.right .right-top-1 .wrapper .item .content .data .value.error {
+  color: #f84849;
+}
+.right .right-top-2 .wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.right .right-top-2 .wrapper .item {
+  width: 50%;
+}
+.right .right-top-2 .wrapper .item .wave-items {
+  display: flex;
+  flex-wrap: wrap;
+}
+.right .right-top-2 .wrapper .item .wave-items .circle {
+  width: 60px;
+  height: 60px;
+  background: #ccc;
+  border: 5px solid #4973ff;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.right .right-top-2 .wrapper .item .wave-items .circle .wave {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #4973ff;
+  border-radius: 50%;
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+}
+.right .right-top-2 .wrapper .item .wave-items .circle .wave:before,
+.right .right-top-2 .wrapper .item .wave-items .circle .wave:after {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -75%);
+}
+.right .right-top-2 .wrapper .item .wave-items .circle .wave:before {
+  border-radius: 45%;
+  background: white;
+  animation: animate 5s linear infinite;
+}
+.right .right-top-2 .wrapper .item .wave-items .circle .wave:after {
+  border-radius: 40%;
+  background: rgba(255, 255, 255, 0.5);
+  animation: animate 10s linear infinite;
+}
+
+#right-top-echarts-1 {
+  height: 200px;
 }
 
 html, body {
