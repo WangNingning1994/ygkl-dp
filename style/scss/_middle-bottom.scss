@@ -3,10 +3,150 @@
   //border: 1px solid #ddd;
   height: 260px;
   background: url("../../assets/frame-type-2.png") no-repeat left top / cover;
+  position: relative;
   > h2 {
     font-size: 1.25rem;
     color: $pureWhite;
     padding-left: 2rem;
     line-height: 2;
+  }
+  .exam-plan{
+    .plan-title{
+      width: 320px;
+      height: 34px;
+      position: absolute;
+      top: 60px;
+      left: 28px;
+      background-color: rgba(37, 227, 255, 0.3);
+      span{
+        width: 120px;
+        height: 16px;
+        font-size: 1.25rem;
+        font-weight: bold;
+        position: absolute;
+        top: 3px;
+        left: 100px;
+        color: $pureWhite;
+      }
+    }
+    .plan-body{
+      width: 320px;
+      height: 120px;
+      position: absolute;
+      top: 112px;
+      left: 30px;
+      span{
+        font-weight: 500;
+        line-height: 26px;
+        font-size: 0.875rem;
+        color: $pureWhite;
+      }
+    }
+  }
+  .exam-data{
+      span{
+        width: 77px;
+        height: 18px;
+        font-size: 18px;
+        font-weight: bold;
+        color: $examGrey;
+        position: absolute;
+        top: 50px;
+        left: 544px;
+      }
+    .data-body{
+      .fwl-img{
+        width: 162px;
+        height: 38px;
+        position: absolute;
+        left: 412px;
+        top: 85px;
+      }
+      .fwl-title{
+        position: absolute;
+        left: 444px;
+        top: 92px;
+        font-weight: bold;
+      }
+      .fwl-data{
+        width: 80px;
+        height: 18px;
+        position: absolute;
+        left: 445px;
+        top: 132px;
+        color: $examGrey;
+        font-weight: bold;
+      }
+      .bsl-img{
+        width: 162px;
+        height: 38px;
+        position: absolute;
+        left: 605px;
+        top: 85px;
+      }
+      .bsl-title{
+        position: absolute;
+        left: 637px;
+        top: 92px;
+        font-weight: bold;
+      }
+      .bsl-data{
+        width: 80px;
+        height: 18px;
+        position: absolute;
+        left: 639px;
+        top: 132px;
+        color: $examGrey;
+        font-weight: bold;
+      }
+      .tsl-img{
+        width: 162px;
+        height: 38px;
+        position: absolute;
+        left: 415px;
+        top: 173px;
+      }
+      .tsl-title{
+        position: absolute;
+        left: 444px;
+        top: 179px;
+        width: 90px;
+        height: 16px;
+        font-weight: bold;
+      }
+      .tsl-data{
+        width: 80px;
+        height: 18px;
+        position: absolute;
+        left: 445px;
+        top: 216px;
+        color: $examGrey;
+        font-weight: bold;
+      }
+      .syl-img{
+        width: 162px;
+        height: 38px;
+        position: absolute;
+        left: 608px;
+        top: 173px;
+      }
+      .syl-title{
+        position: absolute;
+        left: 637px;
+        top: 179px;
+        width: 110px;
+        height: 16px;
+        font-weight: bold;
+      }
+      .syl-data{
+        width: 80px;
+        height: 18px;
+        position: absolute;
+        left: 639px;
+        top: 216px;
+        color: $examGrey;
+        font-weight: bold;
+      }
+    }
   }
 }
