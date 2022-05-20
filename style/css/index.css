@@ -69,6 +69,66 @@ img {
   padding-left: 2rem;
   line-height: 2;
 }
+.left .left-top-1, .left .left-top-2, .left .left-bottom-1, .left .left-bottom-2 {
+  padding: 1em;
+}
+.left .left-top-1 h3, .left .left-top-2 h3, .left .left-bottom-1 h3, .left .left-bottom-2 h3 {
+  font-size: 1.125rem;
+  color: #fff;
+  display: inline-block;
+  border: 3px solid #00d2ff;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-top: none;
+  border-bottom: none;
+}
+.left .left-top-2 .wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.left .left-top-2 .wrapper div {
+  display: flex;
+}
+.left .left-top-2 .wrapper div p {
+  color: #fff;
+}
+.left .left-top-2 .wrapper div p:nth-child(n+2) {
+  margin-left: 1rem;
+}
+.left .left-top-2 .wrapper div p .num {
+  color: #ff9600;
+}
+.left .left-bottom-1 .wrapper {
+  display: flex;
+  align-items: center;
+}
+.left .left-bottom-1 .wrapper div {
+  color: #fff;
+  font-size: 0.875rem;
+  margin-left: 1rem;
+}
+.left .left-bottom-1 .wrapper div p {
+  display: inline-block;
+}
+
+#left-top-echarts-1 {
+  height: 150px;
+  position: relative;
+  top: -2rem;
+}
+
+#left-top-echarts-2 {
+  height: 200px;
+}
+
+#left-bottom-echarts-1, #left-bottom-echarts-2 {
+  height: 150px;
+}
+
+#left-bottom-echarts-1 {
+  position: relative;
+  top: -1rem;
+}
 
 .middle {
   grid-column-start: 2;

@@ -19,4 +19,70 @@
       line-height: 2;
     }
   }
+  .left-top-1, .left-top-2, .left-bottom-1, .left-bottom-2 {
+    padding: 1em;
+    h3 {
+      font-size: 1.125rem;
+      color: $pureWhite;
+      display: inline-block;
+      border: 3px solid $lightBlue;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      border-top: none;
+      border-bottom: none;
+    }
+  }
+  .left-top-2 {
+    .wrapper {
+      display: flex;
+      justify-content: space-between;
+      div {
+        display: flex;
+        p {
+          color: $pureWhite;
+          &:nth-child(n+2) {
+            margin-left: 1rem;
+          }
+          .num {
+            color: $primaryOrange; 
+          }
+        }
+      }
+    }
+  }
+  .left-bottom-1 {
+    .wrapper {
+      display: flex;
+      align-items: center;
+      div {
+        color: $pureWhite;
+        font-size: .875rem;
+        margin-left: 1rem;
+        p {
+          display: inline-block;
+        }
+      } 
+    }
+  }
+}
+
+// Echarts Container
+
+#left-top-echarts-1 {
+  height: 150px;
+  position: relative;
+  top: -2rem;
+}
+
+#left-top-echarts-2 {
+  height: 200px;
+}
+
+#left-bottom-echarts-1, #left-bottom-echarts-2 {
+  height: 150px;
+}
+
+#left-bottom-echarts-1 {
+  position: relative;
+  top: -1rem;
 }
