@@ -8,4 +8,43 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  .map-wrapper {
+    position: relative;
+    .info-board {
+      width: 250px;
+      height: 220px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: url(../../assets/frame-type-4.png) no-repeat center / 100% 100%;
+      .title {
+        text-align: center;
+        color: $pureWhite;
+        font-size: 1.125rem;
+        padding-top: .5rem;
+      }
+      .items {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 1rem;
+        justify-content: space-between;
+        .name {
+          width: 40%;
+          color: #27cffD;
+          font-size: .875rem;
+        }
+        .value {
+          width: 60%;
+          color: #f9bf33;
+          font-size: .875rem;
+        }
+      }
+      &.info-board-2 {
+        top: 260px;
+      }
+    }
+  }
+  #zhoushan-map {
+    height: 600px;
+  }
 }

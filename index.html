@@ -63,6 +63,24 @@
         <div class="tiltle">
           <p>考生</p><img src="assets/numberbg.png">
         </div>
+        <!-- 地图区域 -->
+        <div class="map-wrapper">
+          <div class="info-board info-board-1">
+            <div class="title">舟山技师学院</div>
+            <div class="items">
+              <div class="name">考试名称</div>
+              <div class="value">2022年舟山市中级注册安全资格考试</div>
+            </div>
+          </div>
+          <div class="info-board info-board-2">
+            <div class="title">标准化考场</div>
+            <div class="items">
+              <div class="name">考点学校量：</div>
+              <div class="value">132个</div>
+            </div>
+          </div>
+          <div id="zhoushan-map"></div>
+        </div>
       </div>
       <div class="middle-bottom">
         <h2>考试计划</h2>
@@ -173,24 +191,36 @@
             <div class="item">
               <h3>风险化解</h3>
               <div class="wave-items">
-                <div class="circle">
-                  <div class="wave">
-
+                <div class="circle-wrapper">
+                  <div class="circle">
+                    <div class="wave">
+                      <span class="num">12</span>
+                      <span class="category">考务</span>
+                    </div>
+                  </div>
+                </div> 
+                <div class="circle-wrapper">
+                  <div class="circle">
+                    <div class="wave">
+                      <span class="num">12</span>
+                      <span class="category">防疫</span>
+                    </div>
                   </div>
                 </div>
-                <div class="circle">
-                  <div class="wave">
-
+                <div class="circle-wrapper">
+                  <div class="circle">
+                    <div class="wave">
+                      <span class="num">12</span>
+                      <span class="category">天气</span>
+                    </div>
                   </div>
                 </div>
-                <div class="circle">
-                  <div class="wave">
-
-                  </div>
-                </div>
-                <div class="circle">
-                  <div class="wave">
-
+                <div class="circle-wrapper">
+                  <div class="circle">
+                    <div class="wave">
+                      <span class="num">12</span>
+                      <span class="category">交通</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -204,7 +234,28 @@
       </div>
       <div class="right-bottom">
         <h2>考务保障</h2>
-        <div class="jkry" id="jkry"></div>
+        <div class="right-bottom-1">
+          <h3>监考人员</h3>
+          <div id="right-bottom-echarts-1">
+
+          </div>
+        </div>
+        <div class="right-bottom-2">
+          <div class="wrapper">
+            <div class="item">
+              <h3>人员分布</h3>
+              <div id="right-bottom-echarts-2">
+                
+              </div>
+            </div>
+            <div class="item">
+              <h3>劳务费发放</h3>
+              <div id="right-bottom-echarts-3">
+                
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -214,6 +265,7 @@
   <script src="./scripts/common.js"></script>
   <script src="./scripts/http.js"></script>
   <script src="./scripts/left.js"></script>
+  <script src="./scripts/middle.js"></script>
   <script src="./scripts/right.js"></script>
 </body>
 </html>

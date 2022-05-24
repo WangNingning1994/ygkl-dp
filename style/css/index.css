@@ -140,16 +140,192 @@ img {
   flex-direction: column;
   justify-content: space-between;
 }
+.middle .map-wrapper {
+  position: relative;
+}
+.middle .map-wrapper .info-board {
+  width: 250px;
+  height: 220px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(../../assets/frame-type-4.png) no-repeat center/100% 100%;
+}
+.middle .map-wrapper .info-board .title {
+  text-align: center;
+  color: #fff;
+  font-size: 1.125rem;
+  padding-top: 0.5rem;
+}
+.middle .map-wrapper .info-board .items {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem;
+  justify-content: space-between;
+}
+.middle .map-wrapper .info-board .items .name {
+  width: 40%;
+  color: #27cffD;
+  font-size: 0.875rem;
+}
+.middle .map-wrapper .info-board .items .value {
+  width: 60%;
+  color: #f9bf33;
+  font-size: 0.875rem;
+}
+.middle .map-wrapper .info-board.info-board-2 {
+  top: 260px;
+}
+.middle #zhoushan-map {
+  height: 600px;
+}
 
 .middle-bottom {
   height: 260px;
   background: url("../../assets/frame-type-2.png") no-repeat left top/cover;
+  position: relative;
 }
 .middle-bottom > h2 {
   font-size: 1.25rem;
   color: #fff;
   padding-left: 2rem;
   line-height: 2;
+}
+.middle-bottom .exam {
+  display: flex;
+}
+.middle-bottom .exam .exam-plan .plan-title {
+  width: 320px;
+  height: 34px;
+  position: absolute;
+  top: 60px;
+  left: 28px;
+  background-color: rgba(37, 227, 255, 0.3);
+}
+.middle-bottom .exam .exam-plan .plan-title span {
+  width: 120px;
+  height: 16px;
+  font-size: 1.25rem;
+  font-weight: bold;
+  position: absolute;
+  top: 3px;
+  left: 100px;
+  color: #fff;
+}
+.middle-bottom .exam .exam-plan .plan-body {
+  width: 320px;
+  height: 120px;
+  position: absolute;
+  top: 112px;
+  left: 30px;
+}
+.middle-bottom .exam .exam-plan .plan-body span {
+  font-weight: 500;
+  line-height: 26px;
+  font-size: 0.875rem;
+  color: #fff;
+}
+.middle-bottom .exam .exam-data span {
+  width: 77px;
+  height: 18px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #D2E0E2;
+  position: absolute;
+  top: 50px;
+  left: 544px;
+}
+.middle-bottom .exam .exam-data .data-body .fwl-img {
+  width: 162px;
+  height: 38px;
+  position: absolute;
+  left: 412px;
+  top: 85px;
+}
+.middle-bottom .exam .exam-data .data-body .fwl-title {
+  position: absolute;
+  left: 444px;
+  top: 92px;
+  font-weight: bold;
+}
+.middle-bottom .exam .exam-data .data-body .fwl-data {
+  width: 80px;
+  height: 18px;
+  position: absolute;
+  left: 445px;
+  top: 132px;
+  color: #D2E0E2;
+  font-weight: bold;
+}
+.middle-bottom .exam .exam-data .data-body .bsl-img {
+  width: 162px;
+  height: 38px;
+  position: absolute;
+  left: 605px;
+  top: 85px;
+}
+.middle-bottom .exam .exam-data .data-body .bsl-title {
+  position: absolute;
+  left: 637px;
+  top: 92px;
+  font-weight: bold;
+}
+.middle-bottom .exam .exam-data .data-body .bsl-data {
+  width: 80px;
+  height: 18px;
+  position: absolute;
+  left: 639px;
+  top: 132px;
+  color: #D2E0E2;
+  font-weight: bold;
+}
+.middle-bottom .exam .exam-data .data-body .tsl-img {
+  width: 162px;
+  height: 38px;
+  position: absolute;
+  left: 415px;
+  top: 173px;
+}
+.middle-bottom .exam .exam-data .data-body .tsl-title {
+  position: absolute;
+  left: 444px;
+  top: 179px;
+  width: 90px;
+  height: 16px;
+  font-weight: bold;
+}
+.middle-bottom .exam .exam-data .data-body .tsl-data {
+  width: 80px;
+  height: 18px;
+  position: absolute;
+  left: 445px;
+  top: 216px;
+  color: #D2E0E2;
+  font-weight: bold;
+}
+.middle-bottom .exam .exam-data .data-body .syl-img {
+  width: 162px;
+  height: 38px;
+  position: absolute;
+  left: 608px;
+  top: 173px;
+}
+.middle-bottom .exam .exam-data .data-body .syl-title {
+  position: absolute;
+  left: 637px;
+  top: 179px;
+  width: 110px;
+  height: 16px;
+  font-weight: bold;
+}
+.middle-bottom .exam .exam-data .data-body .syl-data {
+  width: 80px;
+  height: 18px;
+  position: absolute;
+  left: 639px;
+  top: 216px;
+  color: #D2E0E2;
+  font-weight: bold;
 }
 
 @keyframes animate {
@@ -181,11 +357,11 @@ img {
   padding-left: 2rem;
   line-height: 2;
 }
-.right .right-top-1, .right .right-top-2 {
+.right .right-top-1, .right .right-top-2, .right .right-bottom-1, .right .right-bottom-2 {
   padding: 1em;
   height: 200px;
 }
-.right .right-top-1 h3, .right .right-top-2 h3 {
+.right .right-top-1 h3, .right .right-top-2 h3, .right .right-bottom-1 h3, .right .right-bottom-2 h3 {
   font-size: 1.125rem;
   color: #fff;
   display: inline-block;
@@ -241,55 +417,79 @@ img {
 .right .right-top-1 .wrapper .item .content .data .value.error {
   color: #f84849;
 }
-.right .right-top-2 .wrapper {
+.right .right-top-2 .wrapper, .right .right-bottom-2 .wrapper {
   display: flex;
   justify-content: space-between;
 }
-.right .right-top-2 .wrapper .item {
+.right .right-top-2 .wrapper .item, .right .right-bottom-2 .wrapper .item {
   width: 50%;
 }
-.right .right-top-2 .wrapper .item .wave-items {
+.right .right-top-2 .wrapper .item .wave-items, .right .right-bottom-2 .wrapper .item .wave-items {
   display: flex;
   flex-wrap: wrap;
 }
-.right .right-top-2 .wrapper .item .wave-items .circle {
-  width: 60px;
-  height: 60px;
-  background: #ccc;
-  border: 5px solid #4973ff;
+.right .right-top-2 .wrapper .item .wave-items .circle-wrapper, .right .right-bottom-2 .wrapper .item .wave-items .circle-wrapper {
+  width: 50%;
+  margin-top: 0.5rem;
+}
+.right .right-top-2 .wrapper .item .wave-items .circle-wrapper:nth-child(2) .circle, .right .right-bottom-2 .wrapper .item .wave-items .circle-wrapper:nth-child(2) .circle {
+  border-color: #ff4a4a;
+}
+.right .right-top-2 .wrapper .item .wave-items .circle-wrapper:nth-child(2) .circle .wave, .right .right-bottom-2 .wrapper .item .wave-items .circle-wrapper:nth-child(2) .circle .wave {
+  border-color: #ff4a4a;
+  color: #ff4a4a;
+}
+.right .right-top-2 .wrapper .item .wave-items .circle-wrapper:nth-child(3) .circle, .right .right-bottom-2 .wrapper .item .wave-items .circle-wrapper:nth-child(3) .circle {
+  border-color: #00d2ff;
+}
+.right .right-top-2 .wrapper .item .wave-items .circle-wrapper:nth-child(3) .circle .wave, .right .right-bottom-2 .wrapper .item .wave-items .circle-wrapper:nth-child(3) .circle .wave {
+  border-color: #00d2ff;
+  color: #00d2ff;
+}
+.right .right-top-2 .wrapper .item .wave-items .circle-wrapper:nth-child(4) .circle, .right .right-bottom-2 .wrapper .item .wave-items .circle-wrapper:nth-child(4) .circle {
+  border-color: #0dc406;
+}
+.right .right-top-2 .wrapper .item .wave-items .circle-wrapper:nth-child(4) .circle .wave, .right .right-bottom-2 .wrapper .item .wave-items .circle-wrapper:nth-child(4) .circle .wave {
+  border-color: #0dc406;
+  color: #0dc406;
+}
+.right .right-top-2 .wrapper .item .wave-items .circle, .right .right-bottom-2 .wrapper .item .wave-items .circle {
+  width: 70px;
+  height: 70px;
+  background: transparent;
+  border: 2px dashed #fa9e2d;
   border-radius: 50%;
   overflow: hidden;
+  padding: 0.5rem;
 }
-.right .right-top-2 .wrapper .item .wave-items .circle .wave {
+.right .right-top-2 .wrapper .item .wave-items .circle .wave, .right .right-bottom-2 .wrapper .item .wave-items .circle .wave {
   position: relative;
   width: 100%;
   height: 100%;
-  background: #4973ff;
+  background: transparent;
+  border: 3px solid #fa9e2d;
   border-radius: 50%;
-  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+  color: #fa9e2d;
+  text-align: center;
 }
-.right .right-top-2 .wrapper .item .wave-items .circle .wave:before,
-.right .right-top-2 .wrapper .item .wave-items .circle .wave:after {
-  content: "";
-  position: absolute;
-  width: 200%;
-  height: 200%;
-  top: 0;
-  left: 50%;
-  transform: translate(-50%, -75%);
-}
-.right .right-top-2 .wrapper .item .wave-items .circle .wave:before {
-  border-radius: 45%;
-  background: white;
-  animation: animate 5s linear infinite;
-}
-.right .right-top-2 .wrapper .item .wave-items .circle .wave:after {
-  border-radius: 40%;
-  background: rgba(255, 255, 255, 0.5);
-  animation: animate 10s linear infinite;
+.right .right-top-2 .wrapper .item .wave-items .circle .wave .num, .right .right-bottom-2 .wrapper .item .wave-items .circle .wave .num {
+  display: block;
 }
 
 #right-top-echarts-1 {
+  height: 200px;
+}
+
+#right-bottom-echarts-1 {
+  height: 200px;
+}
+
+#right-bottom-echarts-2 {
+  width: 120%;
+  height: 200px;
+}
+
+#right-bottom-echarts-3 {
   height: 200px;
 }
 

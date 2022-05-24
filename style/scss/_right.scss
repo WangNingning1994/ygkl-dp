@@ -28,7 +28,7 @@
       line-height: 2;
     }
   }
-  .right-top-1, .right-top-2 {
+  .right-top-1, .right-top-2, .right-bottom-1, .right-bottom-2 {
     padding: 1em;
     height: 200px;
     h3 {
@@ -92,7 +92,7 @@
       }
     }
   }
-  .right-top-2 {
+  .right-top-2, .right-bottom-2 {
     .wrapper {
       display: flex;
       justify-content: space-between;
@@ -101,40 +101,57 @@
         .wave-items {
           display: flex;
           flex-wrap: wrap;
+          .circle-wrapper {
+            width: 50%;
+            margin-top: .5rem;
+            &:nth-child(2) {
+              .circle {
+                border-color: #ff4a4a;
+                .wave {
+                  border-color: #ff4a4a;
+                  color: #ff4a4a;
+                }
+              }
+            }
+            &:nth-child(3) {
+              .circle {
+                border-color: #00d2ff;
+                .wave {
+                  border-color: #00d2ff;
+                  color: #00d2ff;
+                }
+              }
+            }
+            &:nth-child(4) {
+              .circle {
+                border-color: #0dc406;
+                .wave {
+                  border-color: #0dc406;
+                  color: #0dc406;
+                }
+              }
+            }
+          }
           .circle {
-            width: 60px;
-            height: 60px;
-            background: #ccc;
-            border: 5px solid #4973ff;
+            width: 70px;
+            height: 70px;
+            background: transparent;
+            border: 2px dashed $secondaryOrange;
             border-radius: 50%;
             overflow: hidden;
+            padding: .5rem;
             .wave {
               position: relative;
               width: 100%;
               height: 100%;
-              background: #4973ff;
+              background: transparent;
+              border: 3px solid $secondaryOrange;
               border-radius: 50%;
-              box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
-            }
-            .wave:before,
-            .wave:after {
-              content: '';
-              position: absolute;
-              width: 200%;
-              height: 200%;
-              top: 0;
-              left: 50%;
-              transform: translate(-50%, -75%);
-            }
-            .wave:before {
-              border-radius: 45%;
-              background: rgba(255, 255, 255, 1);
-              animation: animate 5s linear infinite;
-            }
-            .wave:after {
-              border-radius: 40%;
-              background: rgba(255, 255, 255, .5);
-              animation: animate 10s linear infinite;
+              color: $secondaryOrange;
+              text-align: center;
+              .num {
+                display: block;
+              }
             }
           }
         }
@@ -145,5 +162,18 @@
 
 // Echarts Container
 #right-top-echarts-1 {
+  height: 200px;
+}
+
+#right-bottom-echarts-1 {
+  height: 200px;
+}
+
+#right-bottom-echarts-2 {
+  width: 120%;
+  height: 200px;
+}
+
+#right-bottom-echarts-3 {
   height: 200px;
 }
