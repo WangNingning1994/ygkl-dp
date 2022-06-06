@@ -10,6 +10,7 @@
   justify-content: space-between;
   .map-wrapper {
     position: relative;
+    margin-top: 4rem;
     .info-board {
       width: 250px;
       height: 220px;
@@ -32,11 +33,13 @@
           width: 40%;
           color: #27cffD;
           font-size: .875rem;
+          line-height: 1.8;
         }
         .value {
           width: 60%;
           color: #f9bf33;
           font-size: .875rem;
+          line-height: 1.8;
         }
       }
       &.info-board-2 {
@@ -45,6 +48,7 @@
     }
   }
   #zhoushan-map {
+    width: 100%;
     height: 600px;
   }
 }

@@ -58,9 +58,8 @@ function showMap() {
         tooltip: {
           trigger: 'item',
           //自定义tooltip内容
-          // TODO: 隐藏掉外层的 div
           formatter: function (param) { 
-            console.log(param.data.value);
+            // 隐藏掉外层的 div - 这个方法或许不是很严谨
             hideDefaultToolTip();
             return;
           }
@@ -192,3 +191,89 @@ function hideDefaultToolTip() {
 showMap();
 
 hideDefaultToolTip();
+
+/**
+ * 网络请求
+ */
+
+// 中间 - 顶部数据
+const fetchMiddleTopData = async () => {
+  try {
+    let res = await httpClient.post('/zsdp/getZj');
+    console.log('中间 - 顶部数据: ');
+    console.log(res);
+    if (res.code == 1) {
+      if (res.data) {
+        let { ksrs, hgrs, jkrc, wj } = res.data;
+        let ksrsNum = ksrs[0].NUM;
+        let hgrsNum = hgrs[0].NUM;
+        let jkrcNum = jkrc[0].NUM;
+        let wjNum = wj[0].NUM;
+        let ksrsHtmlArr = `${ksrsNum}`.split('').map(int => `<span class="num">${int}</span>`);
+        let hgrsHtmlArr = `${hgrsNum}`.split('').map(int => `<span class="num">${int}</span>`);
+        let jkrcHtmlArr = `${jkrcNum}`.split('').map(int => `<span class="num">${int}</span>`);
+        let wjHtmlArr = `${wjNum}`.split('').map(int => `<span class="num">${int}</span>`);
+        $('.top-wrapper .num-wrapper').eq(0).append(hgrsHtmlArr.join(''));
+        $('.top-wrapper .num-wrapper').eq(1).append(jkrcHtmlArr.join(''));
+        $('.top-wrapper .num-wrapper').eq(2).append(ksrsHtmlArr.join(''));
+        $('.top-wrapper .num-wrapper').eq(3).append(wjHtmlArr.join(''));
+      }
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+fetchMiddleTopData();
+
+// 中间 - 中部（地图）数据（暂时只有定海的数据）
+const fetchMiddleData = async () => {
+  try {
+    // 各个区县的考试信息 TODO: 添加其余区县的数据
+    let res = await httpClient.post('/zsdp/getGqxks'); 
+    // 标准化考场
+    let res1 = await httpClient.post('/zsdp/getBzhkc'); 
+    console.log('中间地图那一块的数据: ');
+    console.log(res);
+    console.log(res1);
+    if (res.code == 1 && res1.code == 1) {
+      if (res.data && res1.data) {
+        let { ksxx, zdkcs, hjkcs } = res.data;
+        // 标准化考场
+        let { bzhkc } = res1.data;
+        $('.info-board-2 .value').eq(0).html(bzhkc[0].QUOTA_VALUES + '个');
+        $('.info-board-2 .value').eq(1).html(bzhkc[1].QUOTA_VALUES + '个');
+        $('.info-board-2 .value').eq(2).html(bzhkc[2].QUOTA_VALUES);
+        $('.info-board-2 .value').eq(3).html(bzhkc[3].QUOTA_VALUES + '个');
+        // 考试信息
+        $('.info-board-1 .value').eq(0).html(ksxx[0].KW0402);
+        $('.info-board-1 .value').eq(1).html(ksxx[0].TIME);
+        $('.info-board-1 .value').eq(2).html(ksxx[0].NUM);
+        $('.info-board-1 .value').eq(3).html(zdkcs[0].NUM);
+        $('.info-board-1 .value').eq(4).html(hjkcs[0].NUM);
+      }
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+fetchMiddleData();
+
+// 中间 - 底部 - 数据
+const fetchMiddleBottomData = async () => {
+  try {
+    let res = await httpClient.post('/zsdp/getQnksjh');
+    if (res.code == 1) {
+      if (res.data) {
+        let planArr = res.data.ksjh;
+        let planHtmlArr = planArr.map(item => `<span>${ item.JHNAME }<br></span>`);
+        // Make it looping!
+        $('.exam-plan .plan-body').append(planHtmlArr.join(''));
+        $('.exam-plan .plan-body').append(planHtmlArr.join(''));
+        $('.exam-plan .plan-body').append(planHtmlArr.join(''));
+      }
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+fetchMiddleBottomData();

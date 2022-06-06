@@ -169,6 +169,7 @@ let leftTop1ChartsOptions = {
 };
 leftTop1Charts.setOption(leftTop1ChartsOptions);
 
+
 /**
  * 左上 - 2
  */
@@ -452,7 +453,8 @@ let leftBottom2ChartsOptions = {
       },
       // 坐标轴刻度颜色
       axisLabel: {
-        color: '#fff'
+        color: '#fff',
+        formatter: '{value}%',
       },
       // 分隔线
       splitLine: {
@@ -501,3 +503,137 @@ let leftBottom2ChartsOptions = {
   ]
 };
 leftBottom2Charts.setOption(leftBottom2ChartsOptions);
+
+/**
+ * 网络请求
+ */
+
+// 左上 - 1
+// TODO: 场次数先空着
+
+const fetchDataTop1Charts = async () => {
+  try {
+    let res = await httpClient.post('/zsdp/kwfw/getKwzz');
+    let res1 = await httpClient.post('/zsdp/kwfw/getZcc');
+    console.log(res);
+    if (res.code == 1 && res1.code == 1) {
+      if (res.data && res1.data) {
+        const { bs, ms, jk, gwy, zg, sy } = res.data;
+        const changciArr = res1.data.zcc.map(item => item.NUM); // 场次数
+        let yearsArr = bs.map(item => item.YEARS);
+        let monthArr = mapYearArrToMonthArr(yearsArr);
+        // 笔试数组
+        let bsValArr = mapQuotaValuesObjArrToQuotaValArr(bs);
+        // 面试数组
+        let msValArr = mapQuotaValuesObjArrToQuotaValArr(ms);
+        // 机考数组
+        let jkValArr = mapQuotaValuesObjArrToQuotaValArr(jk);
+        // 公务员数组
+        let gwyValArr = mapQuotaValuesObjArrToQuotaValArr(gwy);
+        // 资格数组
+        let zgValArr = mapQuotaValuesObjArrToQuotaValArr(zg);
+        // 事业单位数组
+        let syValArr = mapQuotaValuesObjArrToQuotaValArr(sy);
+        leftTop1ChartsOptions.xAxis.data = monthArr;
+        leftTop1ChartsOptions.series[0].data = bsValArr;
+        leftTop1ChartsOptions.series[1].data = msValArr;
+        leftTop1ChartsOptions.series[2].data = jkValArr;
+        leftTop1ChartsOptions.series[3].data = gwyValArr;
+        leftTop1ChartsOptions.series[4].data = zgValArr;
+        leftTop1ChartsOptions.series[5].data = syValArr;
+        leftTop1ChartsOptions.series[6].data = changciArr;
+        leftTop1Charts.setOption(leftTop1ChartsOptions);
+      }
+    }
+  } catch (error) {
+    console.log(error); 
+  }
+};
+fetchDataTop1Charts();
+
+// 左上 - 2
+const fetchDataTop2ChartsOptions = async () => {
+  try {
+    let res = await httpClient.post('/zsdp/kwfw/getWtmt');
+    console.log(res);
+    if (res.code == 1) {
+      if (res.data) {
+        const { data1, gwzs, sjzs, wtdw } = res.data;
+        // 年份数据
+        let yearsArr = data1.map(item => item.YEARS);
+        // 试卷数据
+        let paperDataArr = mapQuotaValuesObjArrToQuotaValArr(data1);
+        leftTop2ChartsOptions.xAxis.data = yearsArr;
+        leftTop2ChartsOptions.series[0].data = paperDataArr;
+        leftTop2Charts.setOption(leftTop2ChartsOptions);
+        // 委托单位数
+        $('.left-top-2 .num-0').html(wtdw[0].WT);
+        // 命题岗位数
+        $('.left-top-2 .num-1').html(gwzs[0].GW);
+        // 试卷数
+        $('.left-top-2 .num-2').html(sjzs[0].SJ);
+      }
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}
+fetchDataTop2ChartsOptions();
+
+// 左下 - 1
+const fetchDataBottom1Charts = async () => {
+  try {
+    let res = await httpClient.post('/zsdp/zlks/getZlks');
+    console.log('左下 - 1 数据: ');
+    console.log(res);
+    if (res.code == 1) {
+      if (res.data) {
+        const { ms, bs, klb } = res.data;
+        let yearsArr = bs.map(item => item.YEARS);
+        // 笔试数据
+        let bsValArr = mapQuotaValuesObjArrToQuotaValArr(bs);
+        // 面试数据
+        let msValArr = mapQuotaValuesObjArrToQuotaValArr(ms);
+        // 考录比数据
+        let klbValArr = mapQuotaValuesObjArrToQuotaValArr(klb);
+        leftBottom1ChartsOptions.series[0].data = bsValArr;
+        leftBottom1ChartsOptions.series[1].data = msValArr;
+        leftBottom1ChartsOptions.series[2].data = klbValArr;
+        leftBottom1ChartsOptions.xAxis.data = yearsArr;
+        leftBottom1Charts.setOption(leftBottom1ChartsOptions);
+      }
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}
+fetchDataBottom1Charts();
+
+// 左下 - 2
+const fetchDataBottom2Charts = async () => {
+  try {
+    let res = await httpClient.post('/zsdp/zlks/getZgks');
+    console.log('左下 - 2 数据: ');
+    console.log(res);
+    if (res.code == 1) {
+      if (res.data) {
+        const { ksrs, hgrs, ckl } = res.data;
+        let yearsArr = ksrs.map(item => item.YEARS);
+        // 考试人数
+        let ksrsArr = mapQuotaValuesObjArrToQuotaValArr(ksrs);
+        // 合格人数
+        let hgrsArr = mapQuotaValuesObjArrToQuotaValArr(hgrs);
+        // 参考率
+        let cklArr = mapQuotaValuesObjArrToQuotaValArr(ckl);
+        leftBottom2ChartsOptions.xAxis.data = yearsArr;
+        leftBottom2ChartsOptions.series[0].data = ksrsArr;
+        leftBottom2ChartsOptions.series[1].data = hgrsArr;
+        leftBottom2ChartsOptions.series[2].data = mapPercentArrToNumArr(cklArr);
+        leftBottom2Charts.setOption(leftBottom2ChartsOptions);
+      }
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}
+fetchDataBottom2Charts();

@@ -59,48 +59,34 @@
     </div>
     <div class="middle">
       <div class="middle-top">
-        <div class="tiltle">
+        <div class="top-wrapper">
           <div class="ks">
-            <p class="p1">考生</p>
-            <div class="num-1">
-              <span class="num1">1</span><p class="point">.</p>
-              <span class="num2">6</span>
-              <span class="num3">3</span>
+            <p class="name">考生</p>
+            <div class="num-wrapper">
+              <!-- numbers will be inserted here. -->
             </div>
-            <p class="p2">万人次</p>
+            <p class="unit">人次</p>
           </div>
-
           <div class="hg">
-            <p class="p3">合格</p>
-            <div class="num-2">
-              <span class="num4">6</span>
-              <span class="num5">0</span>
-              <span class="num6">1</span>
-              <span class="num7">1</span>
+            <p class="name">合格</p>
+            <div class="num-wrapper">
+              <!-- numbers will be inserted here. -->
             </div>
-            <p class="p4">人次</p>
+            <p class="unit">人次</p>
           </div>
-
           <div class="jk">
-            <p class="p5">监考</p>
-            <div class="num-3">
-              <span class="num8">0</span>
-              <span class="num9">9</span>
-              <span class="num10">5</span>
-              <span class="num11">5</span>
+            <p class="name">监考</p>
+            <div class="num-wrapper">
+              <!-- numbers will be inserted here. -->
             </div>
-            <p class="p6">人次</p>
+            <p class="unit">人次</p>
           </div>
-
           <div class="wj">
-            <p class="p7">违纪</p>
-            <div class="num-4">
-              <span class="num12">0</span>
-              <span class="num13">0</span>
-              <span class="num14">9</span>
-              <span class="num15">9</span>
+            <p class="name">违纪</p>
+            <div class="num-wrapper">
+              <!-- numbers will be inserted here. -->
             </div>
-            <p class="p8">人次</p>
+            <p class="unit">人次</p>
           </div>
         </div>
         <!-- 地图区域 -->
@@ -110,6 +96,14 @@
             <div class="items">
               <div class="name">考试名称</div>
               <div class="value">2022年舟山市中级注册安全资格考试</div>
+              <div class="name">日期</div>
+              <div class="value">4月19日</div>
+              <div class="name">考生人次</div>
+              <div class="value">1500</div>
+              <div class="name">最大考场数</div>
+              <div class="value">58</div>
+              <div class="name">合计场次数</div>
+              <div class="value">204</div>
             </div>
           </div>
           <div class="info-board info-board-2">
@@ -117,6 +111,12 @@
             <div class="items">
               <div class="name">考点学校量：</div>
               <div class="value">132个</div>
+              <div class="name">考场教室量：</div>
+              <div class="value">5332个</div>
+              <div class="name">监控覆盖率：</div>
+              <div class="value">100%</div>
+              <div class="name">标准考场数：</div>
+              <div class="value">100个</div>
             </div>
           </div>
           <div id="zhoushan-map"></div>
@@ -126,15 +126,12 @@
         <h2>考试计划</h2>
         <div class="exam">
           <div class="exam-plan">
-          <div class="plan-title"><span>全年考试计划</span></div>
-          <div class="plan-body">
-            <span>2022年舟山市中级注册安全资格考试<br></span>
-            <span>2022年上半年舟山市属事业单位公务员招聘考试<br></span>
-            <span>2022年舟山市中级注册安全资格考试<br></span>
-            <span>2022年上半年舟山市属事业单位公务员招聘考试<br></span>
-            <span>2022年上半年舟山市一级注册消防工程师职业资…</span>
+            <div class="plan-title"><span>全年考试计划</span></div>
+            <div class="plan-body-wrapper">
+              <div class="plan-body">
+              </div>
+            </div>
           </div>
-        </div>
           <div class="exam-data">
             <span>考录在线</span>
             <div class="data-body">
@@ -175,23 +172,23 @@
               <div class="content">
                 <div class="data">
                   <div class="title">服务考生完成率</div>
-                  <div class="value">100%</div>
+                  <!-- <div class="value">100%</div> -->
                   <div class="value warning">≥100%</div>
                 </div>
                 <div class="data">
                   <div class="title">违纪违规查处率</div>
-                  <div class="value">100%</div>
-                  <div class="value error">≥100%</div>
+                  <!-- <div class="value">100%</div> -->
+                  <div class="value warning">≤0.2%</div>
                 </div>
                 <div class="data">
                   <div class="title">考生投诉率</div>
-                  <div class="value">100%</div>
-                  <div class="value warning">≥100%</div>
+                  <!-- <div class="value">100%</div> -->
+                  <div class="value warning">≤0.1%</div>
                 </div>
                 <div class="data">
                   <div class="title">考务差错率</div>
-                  <div class="value">100%</div>
-                  <div class="value warning">≥100%</div>
+                  <!-- <div class="value">100%</div> -->
+                  <div class="value warning">=0%</div>
                 </div>
               </div>
             </div>
@@ -204,13 +201,13 @@
               <div class="content">
                 <div class="data">
                   <div class="title">智慧服务使用率</div>
-                  <div class="value">100%</div>
-                  <div class="value error">≥100%</div>
+                  <!-- <div class="value">100%</div> -->
+                  <div class="value warning">≥20%</div>
                 </div>
                 <div class="data">
                   <div class="title">在线响应时效性</div>
-                  <div class="value">100%</div>
-                  <div class="value warning">≥100%</div>
+                  <!-- <div class="value">100%</div> -->
+                  <div class="value warning">≤24h</div>
                 </div>
               </div>
               <div class="title">
@@ -219,8 +216,8 @@
               <div class="content">
                 <div class="data">
                   <div class="title">考务费执行率</div>
-                  <div class="value">100%</div>
-                  <div class="value warning">≥100%</div>
+                  <!-- <div class="value">100%</div> -->
+                  <div class="value warning">≤95%</div>
                 </div>
               </div>
             </div>
@@ -303,9 +300,11 @@
   <script src="./scripts/echarts.js"></script>
   <script src="./scripts/echarts-liquidfill.min.js"></script>
   <script src="./scripts/common.js"></script>
+  <script src="./scripts/axios.min.js"></script>
   <script src="./scripts/http.js"></script>
+  <script src="./scripts/utils.js"></script>
   <script src="./scripts/left.js"></script>
-  <script src="./scripts/middle.js"></script>
   <script src="./scripts/right.js"></script>
+  <script src="./scripts/middle.js"></script>
 </body>
 </html>
