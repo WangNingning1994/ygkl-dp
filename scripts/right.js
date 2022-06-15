@@ -203,8 +203,8 @@ let rightBottom2ChartsOptions = {
   title: [
     {
       text: "性别分布",
-      left: "15%",
-      top: "15%",
+      left: "18%",
+      top: "30%",
       textStyle: {
         color: "#fff",
         fontSize: 10,
@@ -214,7 +214,7 @@ let rightBottom2ChartsOptions = {
     {
       text: "在编分布",
       left: "70%",
-      top: "15%",
+      top: "30%",
       textStyle: {
         color: "#fff",
         fontSize: 10,
@@ -239,13 +239,14 @@ let rightBottom2ChartsOptions = {
       type: 'pie',
       width: '80',
       height: '80',
-      left: '10%',
+      left: '12%',
+      top: '15%',
       radius: ['60%', '80%'],
       avoidLabelOverlap: false,
       labelLine: {
         show: true,
-        length: 2,
-        length2: 2,
+        length: 4,
+        length2: 4,
       },
       label: {
         show: true,
@@ -267,13 +268,14 @@ let rightBottom2ChartsOptions = {
       type: 'pie',
       width: '80',
       height: '80',
+      top: '15%',
       left: '65%',
       radius: ['60%', '80%'],
       avoidLabelOverlap: false,
       labelLine: {
         show: true,
-        length: 2,
-        length2: 2,
+        length: 4,
+        length2: 4,
       },
       label: {
         show: true,
@@ -320,6 +322,7 @@ let rightBottom3ChartsOptions = {
     {
       name: '',
       type: 'radar',
+      left: '20%',
       lineStyle: {
         width: 0
       },
