@@ -60,7 +60,7 @@ function showMap() {
           //自定义tooltip内容
           formatter: function (param) { 
             // 隐藏掉外层的 div - 这个方法或许不是很严谨
-            hideDefaultToolTip();
+            // hideDefaultToolTip();
             return;
           }
         },
@@ -190,7 +190,7 @@ function hideDefaultToolTip() {
 
 showMap();
 
-hideDefaultToolTip();
+// hideDefaultToolTip();
 
 /**
  * 网络请求

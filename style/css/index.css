@@ -112,13 +112,15 @@ img {
 }
 
 #left-top-echarts-1 {
-  height: 150px;
+  height: 160px;
   position: relative;
   top: -2rem;
 }
 
 #left-top-echarts-2 {
   height: 200px;
+  position: relative;
+  top: -10px;
 }
 
 #left-bottom-echarts-1, #left-bottom-echarts-2 {

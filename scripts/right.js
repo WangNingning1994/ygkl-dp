@@ -5,7 +5,7 @@ let rightTop1Charts = echarts.init(document.getElementById('right-top-echarts-1'
 let rightTop1ChartsOptions = {
   title: {
     text: "1.56 \n 万人",
-    left: "32%",
+    left: "35%",
     top: "20%",
     textStyle: {
       color: "#fff",
@@ -36,10 +36,11 @@ let rightTop1ChartsOptions = {
       left: '20%',
       radius: ['60%', '80%'],
       avoidLabelOverlap: false,
+      startAngle: 180,
       labelLine: {
         show: true,
-        length: 3,
-        length2: 3,
+        // length: 3,
+        // length2: 3,
       },
       label: {
         show: true,
@@ -54,9 +55,9 @@ let rightTop1ChartsOptions = {
         { value: 1560, name: '严重违纪人数', itemStyle: {
           color: '#f84849'
         } },
-        { value: 12168, name: '非违纪违规人数', itemStyle: {
-          color: '#00cdf9'
-        } },
+        // { value: 12168, name: '非违纪违规人数', itemStyle: {
+        //   color: '#00cdf9'
+        // } },
       ]
     }
   ]
@@ -390,9 +391,22 @@ const fetchRightTopData2 = async () => {
     let res = await httpClient.post('/zsdp/kfjc/getFxhj');
     if (res.code == 1) {
       if (res.data) {
+        console.log('风险化解数据：');
+        console.log(res.data);
+        let keys = ['kwfx', 'fyfx', 'tqfx', 'jtfx']; //  -> 防疫 天气 考务 交通
+        // use tippy, cool!
+        keys.forEach((key, idx) => {
+          if (res.data[key] && res.data[key].length) {
+            let html = res.data[key].map(item => `${item.ROWNUM} ${item.CONTENT}<br>`);
+            html = html.join('');
+            tippy(`.tippy-trigger-${idx}`, {
+              content: html,
+              allowHTML: true
+            });
+            $('.right-top-2 .wave').eq(idx).find('.num').html(res.data[key].length);
+          }
+        })
         if (res.data.data1) {
-          console.log('风险化解数据：');
-          console.log(res.data.data1);
           const resDataArr = mapQuotaValuesObjArrToQuotaValArr(res.data.data1);
           $('.right-top-2 .wave').each((idx, item) => {
             $(item).find('.num').html(resDataArr[idx]);
@@ -416,12 +430,11 @@ const fetchRightTopData3 = async () => {
         console.log(res.data);
         let resDataArr = mapQuotaValuesObjArrToQuotaValArr(res.data.data1);
         console.log(resDataArr);
-        let total = resDataArr.map(numStr => parseFloat(numStr)).reduce((prev, curr) => prev + curr, 0);
-        total = total / 10000;
+        let total = [ resDataArr[0], resDataArr[1] ].map(numStr => parseFloat(numStr)).reduce((prev, curr) => prev + curr, 0);
         rightTop1ChartsOptions.series[0].data[0].value = resDataArr[0];
         rightTop1ChartsOptions.series[0].data[1].value = resDataArr[1];
-        rightTop1ChartsOptions.series[0].data[2].value = resDataArr[2];
-        rightTop1ChartsOptions.title.text = `${total} \n 万人`;
+        // rightTop1ChartsOptions.series[0].data[2].value = resDataArr[2];
+        rightTop1ChartsOptions.title.text = `${total} \n 人`;
 
         rightTop1Charts.setOption(rightTop1ChartsOptions);
       }

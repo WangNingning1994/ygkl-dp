@@ -10,7 +10,7 @@ let leftTop1ChartsOptions = {
   },
   tooltip: {
     show: true,
-    trigger: 'axis',
+    trigger: 'item',
   },
   legend: {
     itemWidth: 10,
@@ -21,10 +21,10 @@ let leftTop1ChartsOptions = {
       color: '#fff'
     },
     data: [
-      { name: '笔试' },
-      { name: '面试' },
-      { name: '机考' },
-      { name: '' },
+      // { name: '笔试' },
+      // { name: '面试' },
+      // { name: '机考' },
+      // { name: '' },
       { name: '公务员' },
       { name: '资格考试' },
       { name: '事业单位' },
@@ -45,7 +45,8 @@ let leftTop1ChartsOptions = {
     },
     // 坐标轴刻度颜色
     axisLabel: {
-      color: '#fff'
+      color: '#fff',
+      fontSize: 10
     }
   },
   // 双Y轴
@@ -92,35 +93,35 @@ let leftTop1ChartsOptions = {
     }
   ],
   series: [
-    {
-      name: '笔试',
-      data: [120, 200, 150, 80],
-      type: 'bar',
-      stack: '考试次数', // 堆叠
-      itemStyle: {
-        color: '#1a55ff',
-         borderRadius: [0, 0, 50, 50]
-      }
-    },
-    {
-      name: '面试',
-      data: [120, 200, 150, 100],
-      type: 'bar',
-      stack: '考试次数', // 堆叠
-      itemStyle: {
-        color: '#199fff'
-      }
-    },
-    {
-      name: '机考',
-      data: [120, 200, 150, 100],
-      type: 'bar',
-      stack: '考试次数', // 堆叠
-      itemStyle: {
-        color: '#19ecff',
-        borderRadius: [50, 50, 0, 0]
-      }
-    },
+    // {
+    //   name: '笔试',
+    //   data: [120, 200, 150, 80],
+    //   type: 'bar',
+    //   stack: '考试次数', // 堆叠
+    //   itemStyle: {
+    //     color: '#1a55ff',
+    //      borderRadius: [0, 0, 50, 50]
+    //   },
+    // },
+    // {
+    //   name: '面试',
+    //   data: [120, 200, 150, 100],
+    //   type: 'bar',
+    //   stack: '考试次数', // 堆叠
+    //   itemStyle: {
+    //     color: '#199fff'
+    //   },
+    // },
+    // {
+    //   name: '机考',
+    //   data: [120, 200, 150, 100],
+    //   type: 'bar',
+    //   stack: '考试次数', // 堆叠
+    //   itemStyle: {
+    //     color: '#19ecff',
+    //     borderRadius: [50, 50, 0, 0]
+    //   },
+    // },
     {
       name: '公务员',
       data: [120, 200, 150, 80],
@@ -535,13 +536,47 @@ const fetchDataTop1Charts = async () => {
         // 事业单位数组
         let syValArr = mapQuotaValuesObjArrToQuotaValArr(sy);
         leftTop1ChartsOptions.xAxis.data = monthArr;
-        leftTop1ChartsOptions.series[0].data = bsValArr;
-        leftTop1ChartsOptions.series[1].data = msValArr;
-        leftTop1ChartsOptions.series[2].data = jkValArr;
-        leftTop1ChartsOptions.series[3].data = gwyValArr;
-        leftTop1ChartsOptions.series[4].data = zgValArr;
-        leftTop1ChartsOptions.series[5].data = syValArr;
-        leftTop1ChartsOptions.series[6].data = changciArr;
+        // leftTop1ChartsOptions.series[0].data = bsValArr;
+        // leftTop1ChartsOptions.series[1].data = msValArr;
+        // leftTop1ChartsOptions.series[2].data = jkValArr;
+        leftTop1ChartsOptions.series[0].data = gwyValArr;
+        leftTop1ChartsOptions.series[1].data = zgValArr;
+        leftTop1ChartsOptions.series[2].data = syValArr;
+        leftTop1ChartsOptions.series[3].data = changciArr;
+        // tooltip formatter
+        leftTop1ChartsOptions.tooltip.formatter = (params) => {
+          let { seriesIndex, dataIndex, data } = params;
+          console.log(seriesIndex);
+          console.log(dataIndex);
+          console.log(data);
+          if (seriesIndex < 3) {
+            // 考生人数（公务员、资格考试、事业单位）
+            return `<div class="left-top-1-tooltip">
+                      <div class="item">
+                        公务员：${gwyValArr[dataIndex]}
+                      </div>
+                      <div class="item">
+                        资格考试：${zgValArr[dataIndex]}
+                      </div>
+                      <div class="item">
+                        事业单位：${syValArr[dataIndex]}
+                      </div>
+                    </div>`
+          } else {
+            // 场次数
+            return `<div class="left-top-1-tooltip">
+                      <div class="item">
+                        笔试：${bsValArr[dataIndex]}
+                      </div>
+                      <div class="item">
+                        面试：${msValArr[dataIndex]}
+                      </div>
+                      <div class="item">
+                        机考：${jkValArr[dataIndex]}
+                      </div>
+                    </div>`
+          }
+        };
         leftTop1Charts.setOption(leftTop1ChartsOptions);
       }
     }
